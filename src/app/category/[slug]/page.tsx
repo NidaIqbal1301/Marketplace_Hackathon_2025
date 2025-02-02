@@ -6,6 +6,7 @@ import Footer from "@/app/components/footer";
 import Image from "next/image";
 import Benefits from "@/app/components/benefits";
 import Link from "next/link";
+import TopHeader from "@/app/components/topHeader";
 
 // Set up Sanity client
 const sanity = sanityClient({
@@ -58,7 +59,7 @@ export default async function CategoryPage({ params }: { params: { slug: string 
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      <Header />
+      <TopHeader/>
       <DownHeader />
       <div className="container mx-auto px-4 py-8">
         {/* Category Title and Description */}
@@ -81,16 +82,16 @@ export default async function CategoryPage({ params }: { params: { slug: string 
               />
               <div className="p-4">
                 <h2 className="text-xl font-semibold text-gray-800">{product.name}</h2>
-                <p className="text-lg font-semibold text-blue-600 mt-2">
+                <p className="text-lg font-semibold text-gray-800 mt-2">
                   ${product.price.toFixed(2)}
                 </p>
               </div>
               <div className="bg-gray-100 py-2 px-4">
                 <a
                   href={`/product/${product.slug.current}`}
-                  className="block text-center text-sm font-medium text-white bg-blue-600 py-2 rounded-md hover:bg-blue-700 transition"
+                  className="block text-center text-sm font-medium text-white bg-[#2A254B] py-2 rounded-md hover:bg-[#1a143e] transition"
                 >
-                  View Details
+                  Add to Cart
                 </a>
               </div>
             </div>
@@ -99,7 +100,7 @@ export default async function CategoryPage({ params }: { params: { slug: string 
       </div>
 
       {/* Suggestions Section */}
-      <h1 className="text-xl md:text-2xl font-semibold mt-12 text-[#505977]">
+      <h1 className="text-xl md:text-2xl font-semibold mt-12 text-[#2A254B]">
         You might also like
       </h1>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">

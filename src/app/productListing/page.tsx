@@ -7,6 +7,7 @@ import Header from "../components/header";
 import Brand from "../components/brand";
 import Benefits from "../components/benefits";
 import Footer from "../components/footer";
+import TopHeader from "../components/topHeader";
 
 
 
@@ -38,7 +39,7 @@ const ProductListing = () => {
 
   return (
     <>
-      
+      <TopHeader/>
       <Header />
       <section>
         <div className="px-4 md:px-8 lg:px-12 py-8 md:py-12">

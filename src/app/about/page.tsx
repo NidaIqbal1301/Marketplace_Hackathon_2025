@@ -4,11 +4,12 @@ import Header from "../components/header";
 import DownHeader from "../components/downHeader";
 import Footer from "../components/footer";
 import Link from "next/link";
+import TopHeader from "../components/topHeader";
 
 const About = () => {
   return (
     <div>
-      <Header />
+      <TopHeader/>
       <DownHeader />
 
       {/* Hero Section */}

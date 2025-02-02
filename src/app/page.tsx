@@ -8,13 +8,13 @@ import PopularProduct from "./components/pouplarProduct";
 import Benefits from "./components/benefits";
 import Touch from "./components/touch";
 import Footer from "./components/footer";
+import TopHeader from "./components/topHeader";
 
 
 export default function Home() {
   return (
     <div className="">
-      
-      <Header/>
+      <TopHeader/>
       <DownHeader/>
       <HeroSection/>
       <Brand/>

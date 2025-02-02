@@ -6,6 +6,7 @@ import Image from "next/image";
 import Header from "@/app/components/header";
 import DownHeader from "@/app/components/downHeader";
 import Footer from "@/app/components/footer";
+import TopHeader from "@/app/components/topHeader";
 
 const sanity = sanityClient({
   projectId: "czerxdw7",
@@ -76,6 +77,12 @@ export default function ProductDetail({ params }: { params: { slug: string } }) 
     }
   };
 
+  const clearCart = () => {
+    setCart([]);
+    localStorage.removeItem("cart");
+    alert("Your cart has been cleared!");
+  };
+
   if (!product) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-gray-50">
@@ -86,7 +93,7 @@ export default function ProductDetail({ params }: { params: { slug: string } }) 
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      <Header />
+      <TopHeader />
       <DownHeader />
       <div className="container mx-auto p-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -128,7 +135,7 @@ export default function ProductDetail({ params }: { params: { slug: string } }) 
 
             <button
               onClick={addToCart}
-              className="mt-8 w-full bg-[#2A254B] text-white py-3 rounded-lg shadow-md hover:bg-blue-900 transition-all"
+              className="mt-8 w-full bg-[#2A254B] text-white py-3 rounded-lg shadow-md hover:bg-[#1a143e] transition-all"
             >
               Add to Cart
             </button>
@@ -159,6 +166,12 @@ export default function ProductDetail({ params }: { params: { slug: string } }) 
                 </li>
               ))}
             </ul>
+            <button
+              onClick={clearCart}
+              className="mt-6 w-full bg-red-600 text-white py-3 rounded-lg shadow-md hover:bg-red-500 transition-all"
+            >
+              Clear Cart
+            </button>
           </div>
         )}
       </div>

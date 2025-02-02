@@ -13,20 +13,19 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  
-
   return (
     <div>
       <header className="shadow-md font-sans tracking-wide relative z-50">
         {/* Top section with notification */}
-        <section className="flex items-center justify-center py-2 bg-[#2A254B] text-white px-10">
-          
-           <TbTruckDelivery/>
-          <p className="text-sm text-center w-full">
-            Free delivery on all orders over £50 with code easter checkout
-          </p>
+        <section className="flex items-center justify-center relative py-2 bg-[#2A254B] text-white px-10">
+          <div className="flex items-center space-x-2">
+            <TbTruckDelivery />
+            <p className="text-sm text-center w-full">
+              Free delivery on all orders over £50 with code easter checkout
+            </p>
+          </div>
           <svg
-            className="h-8 w-8 text-white"
+            className="h-8 w-8 text-white absolute right-4"
             width="24"
             height="24"
             viewBox="0 0 24 24"
@@ -124,15 +123,13 @@ const Header = () => {
 
           {/* Desktop Icons (Search, Cart, User) */}
           <div className="flex items-center space-x-4">
-            
             <FaSearch className="w-6 h-6 cursor-pointer" />
 
-            
             {/*<Link href="/shopping"></Link>*/}
             <FaShoppingCart className="hidden md:flex w-6 h-6 cursor-pointer" />
-            
+
             <Link href="/auth">
-            <FaUserCircle className="hidden md:flex  w-6 h-6 cursor-pointer" />
+              <FaUserCircle className="hidden md:flex  w-6 h-6 cursor-pointer" />
             </Link>
           </div>
         </div>
@@ -142,7 +139,6 @@ const Header = () => {
 };
 
 export default Header;
-
 
 //  <Link
 // href="/shopping"
